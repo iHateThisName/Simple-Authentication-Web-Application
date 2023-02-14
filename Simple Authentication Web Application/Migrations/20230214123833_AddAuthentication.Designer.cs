@@ -12,7 +12,7 @@ using Simple_Authentication_Web_Application.Model;
 namespace SimpleAuthenticationWebApplication.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    [Migration("20230212155050_AddAuthentication")]
+    [Migration("20230214123833_AddAuthentication")]
     partial class AddAuthentication
     {
         /// <inheritdoc />

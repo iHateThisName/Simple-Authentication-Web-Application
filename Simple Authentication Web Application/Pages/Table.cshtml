@@ -1,0 +1,75 @@
+﻿@page
+@model Simple_Authentication_Web_Application.Pages.TableModel
+@{
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+
+        button {
+            background-color: mediumspringgreen;
+            color: white;
+            height: 40px;
+            width: 150px;
+        }
+
+            button:hover {
+                background-color: green;
+                cursor: pointer;
+            }
+
+    </style>
+
+    <head>
+        <title>Table Page</title>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    </head>
+
+    <div class="d-flex justify-content-end w-100">
+        <button>Sign out</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date Joined</th>
+                <th>E-mail</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@user.Name</td>
+                    <td>@user.DateJoined</td>
+                    <td>@user.Email</td>
+                    <td>
+                        <div class="d-flex flex-column justify-content-between  w-100 gap-1">
+                            <a href="editPressed" class="d-flex justify-content-center">
+                                <i class="fa fa-edit fa-2xl"></i>
+                            </a>
+                            <a href="DeletePressed" class="d-flex justify-content-center">
+                                <i class="fas fa-times fa-2xl"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+}
